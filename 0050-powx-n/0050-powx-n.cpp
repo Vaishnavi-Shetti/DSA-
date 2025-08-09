@@ -7,11 +7,11 @@ public:
         if(x==-1 && n%2==0) return 1.0;
         if(x==-1 && n%2!=0) return -1.0;
 
-        long int binaryForm=n;
+        long long binaryForm=n;
         double ans=1;
         if(n<0){
             x=1/x;
-            binaryForm=-n;
+            binaryForm=-binaryForm;
         }
         while(binaryForm>0){
             if(binaryForm % 2==1){
