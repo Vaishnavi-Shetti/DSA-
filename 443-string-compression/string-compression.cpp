@@ -6,7 +6,7 @@ public:
         for(int i=0;i<n;i++){
             char ch=chars[i];
             int cnt=0;
-            while(i<n && chars[i]==ch){
+            while(i<n && chars[i]==ch){ 
                 cnt++;
                 i++;
             }
@@ -22,10 +22,7 @@ public:
             }
             i--;
         }
-        int size=0;
-        for(int i=0;i<idx;i++){
-            size++;
-        }
-        return size;
+        chars.resize(idx);
+        return size(chars);
     }
 };
