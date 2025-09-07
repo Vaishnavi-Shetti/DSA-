@@ -1,7 +1,7 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        vector<bool> isPrime(n,true);
+        vector<bool> isPrime(n+1,true);
         int cnt=0;
         for(int i=2;i<n;i++){
             if(isPrime[i]){
@@ -15,4 +15,3 @@ public:
         
     }
 };
-    auto init = atexit([]() {ofstream("display_runtime.txt") << "0";});
