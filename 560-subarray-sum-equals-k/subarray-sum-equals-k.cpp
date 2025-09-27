@@ -3,12 +3,27 @@ public:
     int subarraySum(vector<int>& nums, int k) {
         int freq=0;
         int n=size(nums);
-        for(int i=0;i<n;i++){
-            int sum=nums[i];
-            if(sum==k)freq++;
-            for(int j=i+1;j<n;j++){
-                sum+=nums[j];
-                if(sum==k)freq++;
+        unordered_map<int,int> m;
+
+        int ps[n];
+        ps[0]=nums[0];
+
+        for(int i=1;i<n;i++){
+            ps[i]=ps[i-1]+nums[i];
+        }
+
+        for(int j=0;j<n;j++){
+            if(ps[j]==k)freq++;
+
+            int val=ps[j]-k;
+            if(m.find(val)!=m.end()){
+                freq+=m[val];
+            }
+            if(m.find(ps[j])!=m.end()){
+                m[ps[j]]++;
+            }
+            else{
+                m[ps[j]]=1;
             }
         }
         return freq;
