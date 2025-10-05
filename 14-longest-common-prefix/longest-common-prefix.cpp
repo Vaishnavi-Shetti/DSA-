@@ -13,9 +13,10 @@ public:
             }
            res=res.substr(0,i);
         }
-        if(res.empty()){
-            return "";
-        }
-        else return res;
+        // if(res.empty()){
+        //     return "";
+        // }
+        // else 
+        return res;
     }
 };
